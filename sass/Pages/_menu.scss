@@ -1,0 +1,15 @@
+.restau-content::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+    z-index: -1;
+    left: 0;
+    bottom: -60px;
+}
+
+.crop-image-menu{
+    object-fit: cover;
+    height: 350px;
+}

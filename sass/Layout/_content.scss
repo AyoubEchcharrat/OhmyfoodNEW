@@ -12,45 +12,49 @@
 }
 
 .phrasesAccroches__under-title{
-    color:rgb(82, 82, 82)
+    color: rgb(129 129 129);
+    font-size: 20px;
+    font-weight: 300;
 }
 .phrasesAccroches__title {
     font-size: 25px;
-    padding: 0px 35px;
+    padding: 15px 35px 0;
 }
 
 .fonctionnement{
-    padding:10px;
-}
+    padding: 10px;
+    padding-bottom: 75px;
 
-.fonctionnement__cards{
-    background-color: rgb(248, 248, 248);
-    margin:10px 15px;
-    padding:10px;
-    text-align: center;
-    width:85%;
-    position: relative;
-}
-
-.fonctionnement__number{
-    position: absolute;
-    top:30px;
-    left:-10px;
-    color:white;
-    font-size: 13px;
-    background-color: #c948d7;
-    border-radius: 50px;
-    height:20px;
-    width:20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fonctionnement__cards{
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
+    &__cards{
+        background-color: rgb(248, 248, 248);
+        margin:10px 15px;
+        padding:10px;
+        text-align: center;
+        width:85%;
+        position: relative;
+        @include box-shadow;
+    }
+    
+    &__number{
+        position: absolute;
+        top:30px;
+        left:-10px;
+        color:white;
+        font-size: 13px;
+        background-color: #c948d7;
+        border-radius: 50px;
+        height:20px;
+        width:20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &__cards{
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+    }
 }
 
 .restaurants{
@@ -64,3 +68,65 @@
     align-items: center;
     flex-direction: column;
 }
+
+.restau-content{
+    position:relative;
+    top:-60px;
+    background-color: #f7f7f7;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    padding:25px;
+}
+
+.restau-name{
+    font-family: 'Shrikhand', cursive;
+    font-size:33px;
+}
+.restau-global-section{
+    margin-bottom:40px;
+}
+.restau-section-name{
+    position: relative;
+    font-weight: 300;
+    &::after{
+        position: absolute;
+        bottom:-8px;
+        left:0;
+        content: "";
+        border-bottom: #91e4ad solid 2px;
+        width:50px;
+        height:10px;
+    }
+}
+
+.titres {
+    padding-left: 15px;
+}
+
+.menu-card{
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 20px 0;
+    @include box-shadow;
+
+    &__name {
+        font-size: 21px;
+        font-weight: 700;
+        margin: 0;
+        margin-top: 15px;
+    }
+    &__sub-name {
+        color: #5c5c5c;
+        font-weight: 400;
+        margin: 10px 0 15px 0;
+    }
+    &__price{
+        margin-top: 50px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+
