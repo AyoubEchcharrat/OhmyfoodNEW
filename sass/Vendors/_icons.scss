@@ -1,23 +1,78 @@
-.fa-solid{
-    margin: 19px 10px;
+$check-validation : rgb(167, 231, 226);
+
+.fa-location-dot {
+    margin: 17px 9px;
 }
 
-.fctnmt--icone{
-    color:grey;
-    position:relative;
-    left:-20px;
+.fctnmt--icone {
+    color: grey;
     font-size: 19px;
+    margin: 16px 30px 18px -10px;
 }
-.home-heart{
-    margin: 27px 26px;
-    font-size: 30px;
+
+.icon--actif{
+    color: #9356DC;
 }
 
 .restau-heart{
-    padding: 10px 10px 0 0;
-    font-size: 30px;
+    margin: 30px 20px;
 }
 .restau-title{
     display: flex;
     justify-content: space-between;
+}
+
+.arrow-back-link{
+    position:absolute;
+    left:30px;
+    top:25px;
+    font-size:28px;
+    z-index: 2;
+}
+
+.home-heart{
+    margin: 27px 26px;
+}
+
+.heart_animation{
+    font-size: 30px;
+    color:rgb(0, 0, 0);
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f004";
+        font-weight: 900;
+        color:rgba(0, 0, 0, 0);
+        position: absolute;
+        left:0;
+        top:0;
+    }
+    &:hover{
+        color:rgb(0, 0, 0);
+        transform:scale(0.9);
+        transition: transform .2s;
+        
+        &::after{
+            color:rgb(228, 111, 202);
+            transition: all .2s .2s;
+            transform:scale(1.2);
+        }
+    }
+}
+
+.icon-validation{
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    color: $check-validation;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_icon {
+    width: 25px;
 }

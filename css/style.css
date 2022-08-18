@@ -1,4 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Shrikhand&display=swap");
+.loader {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.loader__circle {
+  margin: auto;
+  border: 12px solid #EAF0F6;
+  border-radius: 100%;
+  border-top: 12px solid #9356DC;
+  width: 200px;
+  height: 200px;
+  animation: spinner 1.5s cubic-bezier(0.82, 0.35, 0.13, 0.6) infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.hide-After-3seconds {
+  animation: hideAnimation 0s ease-in 2.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
 .restau-content::before {
   content: "";
   position: absolute;
@@ -31,12 +73,24 @@ a {
 
 .button--default {
   border-radius: 100px;
-  background: rgb(244, 155, 250);
-  background: linear-gradient(172deg, rgb(244, 155, 250) 0%, rgb(201, 72, 215) 100%);
   padding: 15px 25px;
   color: white;
   width: fit-content;
+  text-align: center;
   box-shadow: 0px 6px 12px -5px #838383;
+  background-size: 200%;
+  background-position: 100% 50%;
+  background-color: #9356DC;
+  background-image: linear-gradient(#FF79DA, rgba(255, 255, 255, 0));
+  transition: background-color 0.25s, box-shadow 0.5s;
+  cursor: pointer;
+}
+.button--default:hover {
+  background-color: #FF79DA;
+  box-shadow: 0px 10px 12px -7px #b9b9b9;
+}
+.button--default--small {
+  width: 100px;
 }
 
 .flexcenter {
@@ -101,10 +155,11 @@ a {
   color: rgb(129, 129, 129);
   font-size: 20px;
   font-weight: 300;
+  margin: 0 0 40px 0;
 }
 
 .phrasesAccroches__title {
-  font-size: 25px;
+  font-size: 27px;
   padding: 15px 35px 0;
 }
 
@@ -113,21 +168,21 @@ a {
   padding-bottom: 75px;
 }
 .fonctionnement__cards {
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(245, 245, 245);
   margin: 10px 15px;
   padding: 10px;
   text-align: center;
   width: 85%;
   position: relative;
-  box-shadow: 0px 4px 15px -5px #d7d7d7;
+  box-shadow: 0px 5px 15px -7px #838383;
 }
 .fonctionnement__number {
   position: absolute;
-  top: 30px;
+  top: 27px;
   left: -10px;
   color: white;
   font-size: 13px;
-  background-color: #c948d7;
+  background-color: #9356DC;
   border-radius: 50px;
   height: 20px;
   width: 20px;
@@ -139,6 +194,16 @@ a {
   display: flex;
   justify-content: center;
   border-radius: 15px;
+}
+.fonctionnement__txt {
+  font-weight: 600;
+  color: #323232;
+  width: 179px;
+  margin-left: -10px;
+  text-align: left;
+}
+.fonctionnement--actif {
+  background-color: rgb(247, 235, 252);
 }
 
 .restaurants {
@@ -165,10 +230,20 @@ a {
 .restau-name {
   font-family: "Shrikhand", cursive;
   font-size: 33px;
+  font-weight: 300;
 }
 
 .restau-global-section {
   margin-bottom: 40px;
+}
+
+.restau-image {
+  object-fit: cover;
+}
+@media screen and (min-width: 1000px) {
+  .restau-image {
+    height: 470px;
+  }
 }
 
 .restau-section-name {
@@ -187,16 +262,24 @@ a {
 
 .titres {
   padding-left: 15px;
+  font-size: 26px;
 }
 
 .menu-card {
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 0 0 20px;
   margin: 20px 0;
-  box-shadow: 0px 4px 15px -5px #d7d7d7;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px -7px #838383;
+}
+.menu-card__right {
+  margin-right: 20px;
+}
+.menu-card__left {
+  flex-grow: 1;
 }
 .menu-card__name {
   font-size: 21px;
@@ -214,7 +297,65 @@ a {
   font-size: 16px;
   font-weight: 700;
 }
+.menu-card--animation_validation {
+  overflow: hidden;
+}
+.menu-card--animation_validation:hover > .menu-validation {
+  width: 100px;
+}
+.menu-card--animation_validation:hover .collapse-text {
+  width: 50vw;
+}
+.menu-card--animation_validation:hover .icon-validation {
+  transform: rotate(360deg);
+  transition: transform 0.5s;
+}
 
+.menu-validation {
+  width: 0;
+  background-color: #99E2D0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+  display: block;
+  transition: width 0.5s;
+  overflow: hidden;
+}
+
+.collapse-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 70vw;
+  transition: width 0.5s;
+}
+
+.menu-restau-animation-part_1 {
+  opacity: 0;
+  animation: opacity 1s 0s reverse forwards;
+}
+
+.menu-restau-animation-part_2 {
+  opacity: 0;
+  animation: opacity 1s 0.15s reverse forwards;
+}
+
+.menu-restau-animation-part_3 {
+  opacity: 0;
+  animation: opacity 1s 0.3s reverse forwards;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
 footer {
   color: white;
   background-color: #333;
@@ -223,6 +364,12 @@ footer {
 
 .footer__logo img {
   width: 150px;
+  filter: brightness(30);
+}
+
+header {
+  position: relative;
+  z-index: 2;
 }
 
 .header__logo {
@@ -237,30 +384,80 @@ footer {
   width: 240px;
 }
 
-.fa-solid {
-  margin: 19px 10px;
+.fa-location-dot {
+  margin: 17px 9px;
 }
 
 .fctnmt--icone {
   color: grey;
-  position: relative;
-  left: -20px;
   font-size: 19px;
+  margin: 16px 30px 18px -10px;
 }
 
-.home-heart {
-  margin: 27px 26px;
-  font-size: 30px;
+.icon--actif {
+  color: #9356DC;
 }
 
 .restau-heart {
-  padding: 10px 10px 0 0;
-  font-size: 30px;
+  margin: 30px 20px;
 }
 
 .restau-title {
   display: flex;
   justify-content: space-between;
+}
+
+.arrow-back-link {
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  font-size: 28px;
+  z-index: 2;
+}
+
+.home-heart {
+  margin: 27px 26px;
+}
+
+.heart_animation {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  position: relative;
+  cursor: pointer;
+}
+.heart_animation::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.heart_animation:hover {
+  color: rgb(0, 0, 0);
+  transform: scale(0.9);
+  transition: transform 0.2s;
+}
+.heart_animation:hover::after {
+  color: rgb(228, 111, 202);
+  transition: all 0.2s 0.2s;
+  transform: scale(1.2);
+}
+
+.icon-validation {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  color: rgb(167, 231, 226);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_icon {
+  width: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

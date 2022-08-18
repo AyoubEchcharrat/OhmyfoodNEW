@@ -1,11 +1,24 @@
 .button--default{
     border-radius:100px;
-    background: rgb(244,155,250);
-    background: linear-gradient(172deg, rgba(244,155,250,1) 0%, rgba(201,72,215,1) 100%);
     padding:15px 25px;
     color:white;
     width: fit-content;
+    text-align: center;
     box-shadow: 0px 6px 12px -5px #838383;
+    background-size: 200%;
+    background-position: 100% 50%;
+    background-color: $primary ;
+    background-image: linear-gradient( $secondary , rgba(255,255,255,0));
+    transition: background-color .25s, box-shadow .5s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $secondary ;
+        box-shadow: 0px 10px 12px -7px #b9b9b9;
+    }
+    &--small{
+        width:100px;
+    }
 }
 
 .flexcenter{

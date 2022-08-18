@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.fa-location-dot {
+  margin: 17px 9px;
+}
+
+.fctnmt--icone {
+  color: grey;
+  font-size: 19px;
+  margin: 16px 30px 18px -10px;
+}
+
+.icon--actif {
+  color: #9356DC;
+}
+
+.restau-heart {
+  margin: 30px 20px;
+}
+
+.restau-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-back-link {
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  font-size: 28px;
+  z-index: 2;
+}
+
+.home-heart {
+  margin: 27px 26px;
+}
+
+.heart_animation {
+  font-size: 30px;
+  color: black;
+  position: relative;
+  cursor: pointer;
+}
+.heart_animation::after {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.heart_animation:hover {
+  color: black;
+  transform: scale(0.9);
+  transition: transform 0.2s;
+}
+.heart_animation:hover::after {
+  color: #e46fca;
+  transition: all 0.2s 0.2s;
+  transform: scale(1.2);
+}
+
+.icon-validation {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  color: #a7e7e2;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_icon {
+  width: 25px;
+}
