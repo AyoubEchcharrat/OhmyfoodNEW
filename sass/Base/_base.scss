@@ -4,6 +4,11 @@ body{
     margin:0;
     font-family: 'roboto', sans-serif;
 }
+
+html, body { 
+    scroll-behavior: smooth
+  }
+
 img{
     width:100%;
 }

@@ -40,23 +40,31 @@
     margin-bottom: 20px;
     font-size: 0;
     border-radius: 20px;
-}
-.card--info{
-    background-color: #fff;
-    display: flex;
-    justify-content:space-between;
-    border-radius: 0 0 20px 20px;
-}
-.card--info--title{
-    margin: 0;
-    font-size: 19px;
-    margin:0;
-}
+    position:relative;
 
-.card--info--ville{
-    font-size:17px;
-    margin:0;
-}
-.card--info--leftSide {
-    padding: 15px;
+    &--info{
+        background-color: #fff;
+        display: flex;
+        justify-content:space-between;
+        border-radius: 0 0 20px 20px;
+
+        &--title{
+            margin: 0;
+            font-size: 19px;
+            margin:0;
+        }
+
+        &--ville{
+            font-size:17px;
+            margin:0;
+        }
+        &--leftSide {
+            padding: 15px;
+        }
+        &--heart{
+            position: absolute;
+            bottom: 37px;
+            right: 24px;
+        }
+    }
 }
