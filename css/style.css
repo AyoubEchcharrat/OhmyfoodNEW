@@ -91,7 +91,7 @@ a {
 }
 .button--default:hover {
   background-color: #FF79DA;
-  box-shadow: 0px 10px 12px -7px #b9b9b9;
+  box-shadow: 0px 18px 12px -6px #b9b9b9;
 }
 .button--default--small {
   width: 100px;
